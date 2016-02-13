@@ -6,8 +6,8 @@
       <li><a href="#/shorten">Shorten</a></li>
     </ul>
   </div>
-    <form class="creator">
-      <input type="url" name="input" required>
+    <form class="creator" ng-submit="addLink()">
+      <input type="url" name="input" ng-model="link.url" required>
       <div role="alert">
         <span class="error" ng-show="myForm.input.$error.required">
           Required!</span>
