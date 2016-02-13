@@ -1,3 +1,13 @@
 <div id='container'>
-  <!-- Your html here -->
+  <div ng-controller="LinksController">
+  <div class='navigation'>
+    <ul>
+      <li><a href="#/links">Links</a></li> 
+      <li><a href="#/shorten">Shorten</a></li>
+    </ul>
+  </div>
+    <ul>
+      <li ng-repeat="link in data.links track by $index"></li>
+    </ul>
+  </div>
 </div>
