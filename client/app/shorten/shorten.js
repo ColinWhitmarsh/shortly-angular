@@ -6,11 +6,11 @@ angular.module('shortly.shorten', [])
   $scope.addLink = function () {
     $socpe.loading = true;
     Links.addOne($scope.link)
-      .then(function(){
+      .then(function () {
         $scope.loading = false;
-        $location.path('/')
+        $location.path('/');
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.error(err);
       });
   };
