@@ -6,8 +6,17 @@
       <li><a href="#/shorten">Shorten</a></li>
     </ul>
   </div>
-    <ul>
-      <li ng-repeat="link in data.links track by $index"></li>
-    </ul>
+    <form class="creator">
+      <input type="url" name="input" required>
+      <div role="alert">
+        <span class="error" ng-show="myForm.input.$error.required">
+          Required!</span>
+        <span class="error" ng-show="myForm.input.$error.url">
+          Not valid url!</span>
+      <input class="submit" type="submit" value="Shorten">
+      </div>
+    </form>
+    <!-- <img class='spinner' src='assets/spiffygif_46x46.gif'> -->
+    <div class='message'></div>
   </div>
 </div>
