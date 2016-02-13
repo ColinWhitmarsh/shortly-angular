@@ -113,10 +113,6 @@ input[type=url]:focus {
   outline: none;
 }
 
-.submit  {
-  width: 10%;
-  display: inline;
-}
 
 .error {
   border: red solid 4px;
@@ -149,4 +145,3 @@ input[type=url]:focus {
 .creator .message {
   clear: both;
 }
-

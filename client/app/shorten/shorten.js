@@ -2,7 +2,6 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, $location, Links, Auth) {
   $scope.link = {};
-
   $scope.addLink = function () {
     $scope.loading = true;
     Links.addOne($scope.link)
