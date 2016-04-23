@@ -1,23 +1,18 @@
 <div id='container'>
-  <div ng-controller="ShortenController">
   <div class='navigation'>
     <ul>
       <li><a href="#/links">Links</a></li> 
       <li><a href="#/shorten">Shorten</a></li>
       <li><a ng-click="signout()">Logout</a></li>
     </ul>
-  </div>
-  <form class="creator" ng-submit="addLink()">
-    <input type="url" name="input" ng-model="link.url" required>
-    <div role="alert">
-      <span class="error" ng-show="myForm.input.$error.required">
-        Required!</span>
-      <span class="error" ng-show="myForm.input.$error.url">
-        Not valid url!</span>
-    <input class="submit" type="submit" value="Shorten">
-    </div>
-  </form>
-    <!-- <img class='spinner' src='assets/spiffygif_46x46.gif'> -->
-    <div class='message'></div>
+  </div>    
+  <div ng-controller="ShortenController">
+    <form name="shortenForm" class="creator" ng-hide="loading" ng-submit="addLink()" novalidate>
+      <input type="url" placeholder="Enter your url here. Include 'http://'" ng-class="{ 'error' : shortenForm.url.$invalid && !shortenForm.url.$pristine }" name="url" ng-model="link.url" required>
+      <button type='submit' value='Shorten' ng-disabled='shortenForm.$invalid'>add</button>
+        <h2 class="message" ng-show="shortenForm.url.$error.required">Url required</h2>
+        <h2 class="message" ng-show="shortenForm.url.$error.url">Not a valid Url</h2>
+    </form>
+    <img ng-show="loading" class='spinner' src='assets/spiffygif_46x46.gif'>
   </div>
 </div>
